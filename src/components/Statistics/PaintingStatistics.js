@@ -1,9 +1,11 @@
+import styles from "./Statistics.module.css";
+
 const PaintingStatistics = ({ stats }) => (
-  <ul className="stat-list">
-    {stats.map(({ id, label, percentage }) => (
-      <li className="item" key={id}>
-        <span className="label">{label}</span>
-        <span className="percentage">{percentage}%</span>
+  <ul className={styles.statList}>
+    {stats.map(({ id, label, percentage, color }) => (
+      <li className={styles.item} key={id} style={{ backgroundColor: color }}>
+        <span className={styles.label}>{label}</span>
+        <span className={styles.percentage}>{percentage}%</span>
       </li>
     ))}
   </ul>

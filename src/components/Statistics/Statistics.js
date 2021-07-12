@@ -1,8 +1,9 @@
 import PaintingStatistics from "./PaintingStatistics";
+import styles from "./Statistics.module.css";
 
 const Statistics = ({ title, stats }) => (
-  <section className="statistics">
-    {title && <h2 className="title">{title}</h2>}
+  <section className={styles.statistics}>
+    {title && <h2 className={styles.title}>{title}</h2>}
     <PaintingStatistics stats={stats} />
   </section>
 );

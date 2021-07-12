@@ -1,12 +1,13 @@
 import defaultImage from "../default.jpg";
 import PropTypes from "prop-types";
+import styles from "./FriendList.module.css";
 
 const FriendListItem = ({ friends }) =>
   friends.map(({ id, isOnline, avatar, name }) => (
-    <li className="item" key={id}>
-      <span className="status">{isOnline.toString()}</span>
-      <img className="avatar" src={avatar} alt={name} width="48" />
-      <p className="name">{name}</p>
+    <li className={styles.item} key={id}>
+      <span className={isOnline ? styles.isOnline : styles.isOffline}></span>
+      <img className={styles.avatar} src={avatar} alt={name} width="48" />
+      <p className={styles.name}>{name}</p>
     </li>
   ));
 
